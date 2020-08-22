@@ -1,9 +1,5 @@
 .DEFAULT_GOAL := help
 
-PDFLATEX = pdflatex -interaction=batchmode -synctex=1
-SH = /bin/bash
-ASCRIPT = /usr/bin/osascript
-
 SOURCE = Rocky_Gray_Resume.tex
 BASE = "$(basename $(SOURCE))"
 
@@ -19,7 +15,7 @@ watch: ## compile and reload
 .PHONY: clean
 clean : ## remove all TeX-generated files in your local directory
 	latexmk -c
-	#$(RM) -f -- *.out *.bcf *.run.xml *.fls *.aux *.bak *.bbl *.blg *.log *.out *.toc *.tdo _region.* *.fdb_latexmk
+	$(RM) -f $(BASE)*.jpg $(BASE).bbl $(BASE).run.xml pdfa.xmpi
 
 GREEN  := $(shell tput -Txterm setaf 2)
 RESET  := $(shell tput -Txterm sgr0)
