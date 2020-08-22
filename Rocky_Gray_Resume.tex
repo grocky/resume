@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%
+% Derrived from: https://github.com/liantze/AltaCV/blob/3881643ca22c17e01f4860a44d449ae8b32e63e8/sample.tex
+%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+\geometry{left=1.2cm,right=1.2cm,top=1.25cm,bottom=1.25cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+\usepackage[default]{lato}
+
+% Change the colours if you want to
+\definecolor{DeepRed}{HTML}{990000}
+\definecolor{PastelRed}{HTML}{EE9999}
+\definecolor{DarkGray}{HTML}{161616}
+\definecolor{SlateGray}{HTML}{2E2E2E}
+\definecolor{LightGray}{HTML}{666666}
+\colorlet{name}{DarkGray}
+\colorlet{tagline}{SlateGray}
+\colorlet{heading}{SlateGray}
+\colorlet{headingrule}{DeepRed}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{DeepRed}
+\colorlet{emphasis}{SlateGray}
+\colorlet{body}{LightGray}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{\small\textbullet}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+\name{Rocky Gray}
+\tagline{Software Engineering Tech Leader}
+\photoR{2.5cm}{headshot}
+\personalinfo{%
+  \location{Washington D.C Metro Area}
+  \homepage{www.rockygray.com}
+  \email{rocky.grayjr@gmail.com}\\
+  \twitter{@RockyGJr}
+  \linkedin{rockygray}
+  \github{grocky}
+}
+
+\makecvheader
+
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Experience}
+
+\cvevent{Senior Software Engineering Manager}{Capital One}{Apr 2018 -- Ongoing}{McLean, VA}
+Tech lead and people leader for an API platform serving internal and external clients.
+\begin{itemize}
+\item Managed 2 teams using Capital One's leadership framework to include, empower, and inspire direct reports.
+\item Designed and led the implementation or critical projects for the platform: \textbf{dual-region architecture, asynchronous virus scanning, object-level encryption}.
+\item Won a Technical Excellence award for the platform's growth, innovative technical design, and reliability.
+\item Top perfomring interviewer for college and professional engineers conducting behavioral and technical interviews.
+\item Member of the leadership team supporting 5 teams in the organization.
+\item Primary and co-inventor on patents derrived from the platform's designs.
+\end{itemize}
+
+\cvtag{NodeJS}
+\cvtag{Go}
+\cvtag{Java}
+\cvtag{Kubernetes}
+\cvtag{Aurora MySQL}
+\cvtag{Cassandra}
+\cvtag{Terraform}
+\cvtag{CloudFormation}
+\cvtag{Ansible}
+
+\divider{}
+
+\cvevent{Lead Software Engineer}{Storyblocks}{Dec 2014 -- Mar 2018}{Arlington, VA}
+Tech lead of the Strategic Technologies team which provided engineering platforms and tools, maintained cloud infrastrucutre, built data pipeline, and developed enterprise products while providing thought leadership for the engineering organization.
+\begin{itemize}
+\item Designed and implemented the migration of our infrastrucutre from a set of managed servers to AWS with Docker.
+\item Designed and implemented an events pipeline to track KPIs for our business. The pipeline consisted of a PHP events framework, Kinesis Firehose, NodeJS Lambda function, and a Redshift data lake.
+\item Established and maintained an enterprise grade API and corporate products in a new business unit that generated over \$1M in new revenue for the company.
+\item Led teams through coaching and development; represented engineers in cross-calibration sessions and provided semi-annual performance feedback.
+\end{itemize}
+
+\cvtag{PHP}
+\cvtag{NodeJS}
+\cvtag{Scala}
+\cvtag{Docker}
+\cvtag{MySQL and Postgres}
+\cvtag{MongoDB}
+\cvtag{CloudFormation}
+\cvtag{Ansible}
+\cvtag{Data Engineering}
+
+\divider{}
+
+\cvevent{Software Engineer}{Capital One}{Jul 2012 -- Dec 2014}{Vienna, VA}
+
+\cvtag{Java}
+\cvtag{Ab Initio}
+
+\divider{}
+
+\cvevent{Co-founder and CTO}{FlashCrystal}{Jun 2012 -- Ongoing}{Nashville, TN}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Life Philosophy}
+\begin{quote}
+``Never give up.''
+\end{quote}
+
+\cvsection{Most Proud of}
+
+\cvachievement{\faUsers}{People leadership}{Inclussive and empowering tech leader}
+
+\cvachievement{\faTrophy}{Achievements}{Patents and tech excellence awards}
+
+\cvachievement{\faChartLine}{Tech organization growth}{Contributed to organizational growth at Stroyblocks and Capital One.}
+
+\cvsection{Strengths}
+
+\cvtag{System Design}
+\cvtag{Technical mentorship}
+\cvtag{Leadership}
+\cvtag{Infrastructure management}
+\cvtag{Application Architecture}
+\cvtag{APIs}
+\cvtag{Automation}
+\cvtag{Getting stuff done}
+
+\cvsection{Languages}
+\cvskill{Javascript}{5}
+\cvskill{Go}{4}
+\cvskill{Java}{3}
+\cvskill{PHP}{4}
+\cvskill{Shell}{5}
+\cvskill{Python, Ruby, scripting}{3}
+
+\cvsection{Education}
+
+\cvevent{B.E.\ in Computer Engineering}{Vanderbilt University}{May 2012}{}
+
+\cvsection{Certifications}
+\cvachievement{\faAws}{Solutions Architect Associates}{Jan 2019: EET55E012B1QQC5L}
+\cvachievement{\faLock}{Certified Secure Software Engineer Associate}{March 2020}
+
+\cvsection{Patents}
+\cvachievement{\faFile*[regular]}{Finite state machine driven workflows}{Nov. 12 2019: US10474506B1}
+
+\end{paracol}
+
+\end{document}
