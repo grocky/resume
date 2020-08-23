@@ -2,20 +2,23 @@
 
 SOURCE = Rocky_Gray_Resume.tex
 BASE = "$(basename $(SOURCE))"
+PUBLIC_DIR = public
 
-build: $(BASE).pdf ## Compile the PDF
+LATEXMK_OPTS=-pdf -output-directory=$(PUBLIC_DIR)
 
-%.pdf: $(SOURCE)
-	latexmk -pdf $^
+build: $(PUBLIC_DIR)/$(BASE).pdf ## Compile the PDF
+
+$(PUBLIC_DIR)/%.pdf: $(SOURCE)
+	latexmk $(LATEXMK_OPTS) $^
 
 .PHONY: watch
-watch: ## compile and reload
-	latexmk -pdf -pvc $(SOURCE)
+watch: $(SOURCE) ## compile and reload
+	latexmk $(LATEXMK_OPTS) -pvc $^
 
 .PHONY: clean
 clean : ## remove all TeX-generated files in your local directory
-	latexmk -c
-	$(RM) -f $(BASE)*.jpg $(BASE).bbl $(BASE).run.xml pdfa.xmpi
+	latexmk -output-directory=$(PUBLIC_DIR) -c
+	$(RM) -f public/$(BASE).bbl public/$(BASE).run.xml public/pdfa.xmpi
 
 infra-init: ## Initialize infrastructure
 	cd infrastructure; terraform init
