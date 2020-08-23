@@ -4,5 +4,5 @@ resource "aws_route53_record" "sub" {
   type    = "CNAME"
   ttl     = "5"
 
-  records = ["https://grocky.github.io/resume/"]
+  records = ["grocky.github.io"]
 }
