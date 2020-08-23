@@ -1,0 +1,35 @@
+#root {
+  font: 1em 'Rubik', sans-serif;
+  background-color: #464646;
+  min-height: 100%;
+}
+
+.brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 4em;
+}
+
+.logo {
+  width: 30%;
+}
+
+.brand .big-font {
+  color: #EEEEEE;
+  font-size: 4em;
+}
+
+.logo-part {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+		width: 40%;
+		max-height: 80%;
+    padding-top: 10em;
+  }
+}
