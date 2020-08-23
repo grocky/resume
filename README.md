@@ -12,13 +12,13 @@ This resume is built using the [altacv](https://www.overleaf.com/latex/templates
 
 ## Architecture
 
-![architecture diagram](./docs/architecture.png)
+![architecture diagram](./graphics/architecture.png)
 
 This resume is hosted on GitHub Pages with a custom domain. When accessing the resume at
 [resume.rockygray.com](https://resume.rockygray.com) there is a short branding animation
 before landing on the PDF.
 
-![branding animation](./docs/branding-animation.gif)
+![branding animation](./graphics/branding-animation.gif)
 
 [Download]: https://github.com/grocky/resume/raw/main/Rocky_Gray_Resume.pdf
 [View]: ./Rocky_Gray_Resume.pdf
