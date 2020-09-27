@@ -6,6 +6,12 @@ OUTPUT_DIR = docs
 
 LATEXMK_OPTS=-pdf -output-directory=$(OUTPUT_DIR)
 
+serve: ## serve page locally
+	go run server.go &
+
+watch-serve: ## watch files and reload on changes
+	ls docs/* | entr reload-browser "Google Chrome"
+
 build: $(OUTPUT_DIR)/$(BASE).pdf ## Compile the PDF
 
 $(OUTPUT_DIR)/%.pdf: $(SOURCE)
