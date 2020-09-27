@@ -40,8 +40,8 @@
 
 @media screen and (max-width: 992px) {
   .logo {
-		width: 60%;
-		max-height: 80%;
+    width: 60%;
+    max-height: 80%;
     padding-top: 2em;
   }
 }
