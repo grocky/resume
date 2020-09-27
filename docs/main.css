@@ -45,3 +45,15 @@
     padding-top: 2em;
   }
 }
+
+@media screen and (max-width: 680px) {
+  .logo {
+    width: 100%;
+  }
+  .big-font {
+    font-size: 2em;
+  }
+  .little-font {
+    font-size: 1em;
+  }
+}
