@@ -215,6 +215,7 @@
 \NewInfoField{twitter}{\faTwitter}[https://twitter.com/]
 \NewInfoField{linkedin}{\faLinkedin}[https://linkedin.com/in/]
 \NewInfoField{github}{\faGithub}[https://github.com/]
+\NewInfoField{stackoverflow}{\faStackOverflow}[https://stackoverflow.com/story/]
 \NewInfoField{orcid}{\aiOrcid}[https://orcid.com/]
 \NewInfoField{location}{\faMapMarker}
 

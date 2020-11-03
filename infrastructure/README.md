@@ -1,6 +1,6 @@
 # Infrastructure
 
-The infrastructure for [www.rockygray.com](https://www.rockygray.com)
+The infrastructure for [resume.rockygray.com](https://resume.rockygray.com)
 
 ## Graph
 
