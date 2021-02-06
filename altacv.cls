@@ -319,6 +319,10 @@
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
 
+\newcommand{\cvtagsmall}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners, inner xsep=.5ex, inner ysep=0.5ex,text height=.75ex,text depth=.25ex]{#1};
+}
+
 \newcommand{\cvskill}[2]{%
 \textcolor{emphasis}{\textbf{#1}}\hfill
 \foreach \x in {1,...,5}{%
