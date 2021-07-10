@@ -315,6 +315,14 @@
   \smallskip
 }
 
+\newcommand{\cvpatent}[3]{%
+  \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+    \multirow{2}{*}{\Large\color{accent}\faFile*[regular]} & \bfseries\textcolor{emphasis}{US Patent \href{https://patents.google.com/patent/#3}{#3}}\\
+  & ``#1,'' #2
+  \end{tabularx}%
+  \smallskip
+}
+
 \newcommand{\cvtag}[1]{%
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
