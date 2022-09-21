@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%
 % Derived from: https://github.com/liantze/AltaCV/blob/3881643ca22c17e01f4860a44d449ae8b32e63e8/sample.tex
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
 
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
-\geometry{left=1.2cm,right=1.2cm,top=1.25cm,bottom=1.25cm,columnsep=1.2cm,paperheight=14.5in}
+\geometry{left=1.2cm,right=1.2cm,top=1.25cm,bottom=1.25cm,columnsep=1.2cm,paperheight=16.5in}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -45,7 +45,7 @@
   \stackoverflow{grocky}
 }
 
-\makecvheader
+\makecvheader{}
 
 \AtBeginEnvironment{itemize}{\small}
 
@@ -58,18 +58,31 @@
 
 \cvsection{Experience}
 
-\cvevent{Engineering Manager}{Twitter}{Nov 2020 -- present}{Remote --- San Franscisco, CA}
-Managing teams of talented engineers building the next generation of revenue APIs and data access layers.
+\cvevent{Engineering Manager}{Twitter}{Nov 2020 --- present}{Remote --- San Franscisco, CA}
+
+Engineering manager for platforms providing interfaces for core ads data.
+
+\begin{itemize}
+\item Grew a team of 5 engineers supporting two platforms to an org of 15 with two teams: Ads API and Data Service
+\item Promoted ICs at each from L4 (SWE I) to L7 (Staff) and an IC to an EM
+\item Defined a multi-year roadmap to increase internal development velocity of ads products
+\item Led the cross-funcitonal implementation for an architectural design pattern to parallelize web product experimentation and API product design
+\end{itemize}
 
 \cvtag{Leadership}
+\cvtag{API Platform}
+\cvtag{Data Engineering}
+\cvtag{Scala}
+\cvtag{Java}
+\cvtag{GraphQL}
 
 \divider{}
 
-\cvevent{Senior Software Engineering Manager}{Capital One}{Apr 2018 -- October 2020}{McLean, VA}
-Tech lead and people leader for an API platform serving internal and external clients.
+\cvevent{Senior Software Engineering Manager}{Capital One}{Apr 2018 --- October 2020}{McLean, VA}
+Tech lead and people leader for the Focus platform that enabled secure, scalable storage of customer documents and programatic integration with third parties.
 \begin{itemize}
-\item Managed 2 teams using Capital One's leadership framework to include, empower, and inspire direct reports
-\item Designed and led the implementation or critical projects for the platform: \textbf{dual-region architecture, asynchronous virus scanning, object-level encryption}
+\item Managed 2 teams that focused on the core APIs and the SRE/operations for the platform.
+\item Designed and led the implementation of critical projects for the platform: \textbf{dual-region architecture, asynchronous virus scanning, object-level encryption}
 \item Won a Technical Excellence award for the platform's growth, innovative technical design, and reliability
 \item Top performing interviewer for college and professional engineers conducting behavioral and technical interviews
 \item Member of the leadership team supporting 5 teams in the organization
@@ -85,13 +98,15 @@ Tech lead and people leader for an API platform serving internal and external cl
 \cvtag{Terraform}
 \cvtag{CloudFormation}
 \cvtag{Ansible}
-\cvtag{Cloud Infrastructure}
+\cvtag{AWS}
 \cvtag{API Platform}
+\cvtag{OpenAPI}
+\cvtag{Data Engineering}
 \cvtag{Leadership}
 
 \divider{}
 
-\cvevent{Lead Software Engineer}{Storyblocks}{Dec 2014 -- Mar 2018}{Arlington, VA}
+\cvevent{Lead Software Engineer}{Storyblocks}{Dec 2014 --- Mar 2018}{Arlington, VA}
 Tech lead of the Strategic Technologies team which provided engineering platforms and tools, maintained cloud infrastructure, built data pipeline, and developed enterprise products while providing thought leadership for the engineering organization.
 \begin{itemize}
 \item Designed and implemented the migration of our infrastructure from a set of managed servers to AWS with Docker
@@ -103,6 +118,10 @@ Tech lead of the Strategic Technologies team which provided engineering platform
 \cvtag{PHP}
 \cvtag{NodeJS}
 \cvtag{Scala}
+\cvtag{React}
+\cvtag{Angular}
+\cvtag{Python}
+\cvtag{Ruby}
 \cvtag{Docker}
 \cvtag{MySQL}
 \cvtag{Postgres}
@@ -111,30 +130,31 @@ Tech lead of the Strategic Technologies team which provided engineering platform
 \cvtag{Ansible}
 \cvtag{Data Engineering}
 \cvtag{API Platform}
-\cvtag{Cloud Infrastructure}
+\cvtag{OpenAPI}
+\cvtag{AWS}
 \cvtag{Leadership}
 
 \divider{}
 
-\cvevent{Software Engineer}{Capital One}{Jul 2012 -- Dec 2014}{Vienna, VA}
-A software engineer in the Technology Development Program (TDP) with roles in Enterprise Data Services and the Enterprise
-API Platform.
+\cvevent{Software Engineer}{Capital One}{Jul 2012 --- Dec 2014}{Vienna, VA}
+A full-stack engineer developing some of the first REST APIs for credit card resources and helped build the \href{https://developer.capitalone.com}{API Developer Portal}.
 
 \cvtag{API}
 \cvtag{Java}
+\cvtag{OpenAPI}
 \cvtag{Data Engineering}
-\cvtag{Ab Initio}
 
 \divider{}
 
-\cvevent{Co-founder and CTO}{FlashCrystal}{Jun 2012 -- present}{Nashville, TN}
+\cvevent{Co-founder and CTO}{FlashCrystal}{Jun 2012 --- present}{Nashville, TN}
 
-Head of engineering. Built the foundations of the platform and oversees active development.
+Built the platform for digital media distribution using NFC and web technologies.
 
 \cvtag{Leadership}
 \cvtag{PHP}
 \cvtag{NodeJS}
 \cvtag{Cloud Infrastructure}
+\cvtag{NFC}
 
 %% Switch to the right column. This will now automatically move to the second
 %% page if the content is too long.
@@ -147,11 +167,11 @@ Head of engineering. Built the foundations of the platform and oversees active d
 
 \cvsection{Most Proud of}
 
-\cvachievement{\faUsers}{People leadership}{Inclusive and empowering tech leader}
+\cvachievement{\faUsers}{People leadership}{Hands-on, inclusive, and empowering leader}
 
 \cvachievement{\faTrophy}{Achievements}{Patents and tech excellence awards}
 
-\cvachievement{\faChartLine}{Tech organization growth}{Contributed to organizational growth at Stroyblocks and Capital One}
+\cvachievement{\faChartLine}{Tech organization growth}{Contributed to organizational growth at Stroyblocks, Capital One, and Twitter}
 
 \cvsection{Strengths}
 
@@ -162,7 +182,6 @@ Head of engineering. Built the foundations of the platform and oversees active d
 \cvtag{Application Architecture}
 \cvtag{APIs}
 \cvtag{Automation}
-\cvtag{Getting stuff done}
 
 \cvsection{Languages}
 \cvskill{Javascript}{5}
@@ -183,7 +202,8 @@ Head of engineering. Built the foundations of the platform and oversees active d
 \cvsection{Patents}
 \cvpatent{Finite state machine driven workflows}{Nov. 12 2019}{US10474506B1}
 \cvpatent{Distribution of media with tracking and analysis of media usage for royalty, loyalty and collection of metadata}{May. 4 2021}{US10997611B2}
-\cvpatent{Time-based token trust depreciation}{Pending Oct. 16 2019}{US20210119986A1}
+\cvpatent{Time-based token trust depreciation}{Nov. 9 2021}{US11171945B2}
+\cvpatent{Systems configured to manage user-related external party-activity software objects by using machine-readable indicia and methods of use thereof}{Sept. 7 2021}{US11113678B2}
 
 \vspace*{\fill}
 
