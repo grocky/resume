@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-SOURCE = Rocky_Gray_Resume.tex
+SOURCE ?= Rocky_Gray_Resume.tex
 BASE = "$(basename $(SOURCE))"
 OUTPUT_DIR = docs
 
