@@ -4,7 +4,7 @@
 
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
-\geometry{left=1.2cm,right=1.2cm,top=1.25cm,bottom=1.25cm,columnsep=1.2cm,paperheight=18.5in}
+\geometry{left=1.2cm,right=1.2cm,top=1.25cm,bottom=1.25cm,columnsep=1.2cm,paperheight=17.5in}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -37,12 +37,10 @@
 \photoR{2.5cm}{headshot}
 \personalinfo{%
   \location{Washington D.C Metro Area}
-  \homepage{www.rockygray.com}
-  \email{rocky.grayjr@gmail.com}\\
-  \twitter{@RockyGJr}
+  \homepage{www.rockygray.com}\\
+  \email{rocky.grayjr@gmail.com}
   \linkedin{grocky}
   \github{grocky}
-  \stackoverflow{grocky}
 }
 
 \makecvheader{}
@@ -58,11 +56,29 @@
 
 \cvsection{Experience}
 
-\cvevent{Engineering Manager}{Cash App}{Feb 2023 --- present}{Remote --- San Francisco, CA}
+\cvevent{Engineering Manager}{Reddit}{Dec 2024 --- Oct 2025}{Remote --- San Francisco, CA}
 
-I am an engineering leader on a global team providing core infrastructure for money
-movements. I am accountable for the real-time distributed ledger that tracks all
-financial transactions within the Cash ecosystem.
+\begin{itemize}
+    \item \textbf{Led the Ads API Platform and Business Engineering teams}, driving partner integrations, platform reliability, and cross-functional delivery to unlock new revenue opportunities. 
+    \item \textbf{Rate Limit Redesign}: Coordinated Reddit’s first private beta launch for a platform project by aligning with external partners and 20+ internal teams to define and implement upstream system policies.
+    \item \textbf{MCP Server Implementation}: Guided the team that built the first MCP server in the Ads organization, which earned top recognition at Reddit’s company-wide hackathon. Established myself as a subject matter expert (SME) in MCP design and implementation.
+\end{itemize}
+
+\cvtag{Leadership}
+\cvtag{API Platform}
+\cvtag{Data Engineering}
+\cvtag{Go}
+\cvtag{Python}
+\cvtag{OpenAPI}
+
+\divider{}
+
+\cvevent{Engineering Manager}{Cash App}{Feb 2023 --- present}{Remote --- San Francisco, CA}
+\begin{itemize}
+    \item Accountable for the \textbf{real-time distributed ledger} that tracks all financial transactions within the Cash App ecosystem.
+    \item Directed teams across \textbf{core infrastructure for money movement}, balancing reliability with innovation.
+    \item Mentored engineers and established strong \textbf{system design practices}, helping scale the platform for growth and resilience.
+\end{itemize}
 
 \cvtag{Leadership}
 \cvtag{API Platform}
@@ -73,13 +89,11 @@ financial transactions within the Cash ecosystem.
 
 \cvevent{Engineering Manager}{Twitter}{Nov 2020 --- Nov 2022}{Remote --- San Francisco, CA}
 
-Led globally distributed teams building platforms that provide Rest, GraphQL, and RPC interfaces for core ads data.
-
 \begin{itemize}
-\item Grew a team of 5 engineers supporting two platforms to an org of 15 with two teams: Ads API and Data Service
-\item Promoted ICs at each from L4 (SWE I) to L7 (Staff) and an IC to an EM
-\item Defined a multi-year roadmap to increase the internal development velocity of ads products
-\item Led the cross-functional implementation of an architectural design pattern to parallelize web product experimentation and API product design
+    \item \textbf{Scaled global Ads API & Data Service teams} from 5 to 15 engineers, creating two specialized groups.
+    \item Promoted multiple engineers (ICs to Staff and one to EM), demonstrating strong people development and leadership.
+    \item Defined a \textbf{multi-year roadmap} to improve API development velocity and cross-functional delivery.
+    \item Drove adoption of an \textbf{architectural pattern} enabling parallel product experimentation, accelerating both ads and API innovation.
 \end{itemize}
 
 \cvtag{Leadership}
@@ -88,18 +102,16 @@ Led globally distributed teams building platforms that provide Rest, GraphQL, an
 \cvtag{Scala}
 \cvtag{Java}
 \cvtag{GraphQL}
+\cvtag{OpenAPI}
 
 \divider{}
 
 \cvevent{Senior Software Engineering Manager}{Capital One}{Apr 2018 --- October 2020}{McLean, VA}
-Tech lead and people leader for the Focus platform that enabled secure, scalable storage of customer documents and programmatic integration with third parties.
 \begin{itemize}
-\item Managed 2 teams that focused on the core APIs and the SRE/operations for the platform.
-\item Designed and led the implementation of critical projects for the platform: \textbf{dual-region architecture, asynchronous virus scanning, object-level encryption}
-\item Won a Technical Excellence award for the platform's growth, innovative technical design, and reliability
-\item Top performing interviewer for college and professional engineers conducting behavioral and technical interviews
-\item Member of the leadership team supporting 5 teams in the organization
-\item Primary and co-inventor on patents derived from the platform's designs
+    \item Tech lead and people leader for the Focus platform, enabling secure, scalable document storage and third-party integrations.
+    \item Delivered \textbf{dual-region architecture, asynchronous virus scanning, and object-level encryption} to strengthen resiliency.
+    \item Won a \textbf{Technical Excellence Award} for innovation, reliability, and platform growth.
+    \item Co-inventor on multiple patents derived from platform designs.
 \end{itemize}
 
 \cvtag{NodeJS}
@@ -120,12 +132,10 @@ Tech lead and people leader for the Focus platform that enabled secure, scalable
 \divider{}
 
 \cvevent{Lead Software Engineer}{Storyblocks}{Dec 2014 --- Mar 2018}{Arlington, VA}
-Tech lead of the Strategic Technologies team which provided engineering platforms and tools, maintained cloud infrastructure, built data pipeline, and developed enterprise products while providing thought leadership for the engineering organization.
 \begin{itemize}
-\item Designed and implemented the migration of our infrastructure from a set of managed servers to AWS with Docker
-\item Designed and implemented an events pipeline to track KPIs for our business. The pipeline consisted of a PHP events framework, Kinesis Firehose, NodeJS Lambda function, and a Redshift data lake
-\item Established and maintained an enterprise grade API and corporate products in a new business unit that generated over \$1M in new revenue for the company
-\item Led teams through coaching and development; represented engineers in cross-calibration sessions and provided semi-annual performance feedback
+    \item Tech lead of Strategic Technologies team, providing \textbf{platforms, cloud infrastructure, data pipelines, and enterprise APIs}.
+    \item Led AWS migration, event-driven KPI pipeline, and established enterprise APIs that generated \$1M+ new revenue.
+    \item Advocated for engineers, provided mentorship, and supported organizational growth.
 \end{itemize}
 
 \cvtag{PHP}
@@ -150,24 +160,14 @@ Tech lead of the Strategic Technologies team which provided engineering platform
 \divider{}
 
 \cvevent{Software Engineer}{Capital One}{Jul 2012 --- Dec 2014}{Vienna, VA}
-A full-stack engineer developing some of the first REST APIs for credit card resources and helped build the \href{https://developer.capitalone.com}{API Developer Portal} - the banking industry's first public APIs.
+\begin{itemize}
+    \item Built first \textbf{REST APIs for credit card resources} and co-developed the \textbf{\href{https://developer.capitalone.com}{API Developer Portal}}---banking’s first public APIs.
+\end{itemize}
 
 \cvtag{API}
 \cvtag{Java}
 \cvtag{OpenAPI}
 \cvtag{Data Engineering}
-
-\divider{}
-
-\cvevent{Co-founder and CTO}{FlashCrystal}{Jun 2012 --- present}{Nashville, TN}
-
-Built the platform for digital media distribution using NFC and web technologies.
-
-\cvtag{Leadership}
-\cvtag{PHP}
-\cvtag{NodeJS}
-\cvtag{Cloud Infrastructure}
-\cvtag{NFC}
 
 %% Switch to the right column. This will now automatically move to the second
 %% page if the content is too long.
@@ -178,31 +178,12 @@ Built the platform for digital media distribution using NFC and web technologies
 ``Never give up.''
 \end{quote}
 
-\cvsection{Most Proud of}
+\cvsection{Strenghts}
 
-\cvachievement{\faUsers}{People leadership}{Leading globally distributed teams through both tranquil and chaotic times.}
-
-\cvachievement{\faTrophy}{Achievements}{Patents and tech excellence awards}
-
-\cvachievement{\faChartLine}{Tech organization growth}{Contributed to organizational growth at Storyblocks, Capital One, and Twitter}
-
-\cvsection{Strengths}
-
-\cvtag{System Design}
-\cvtag{Technical mentorship}
-\cvtag{Leadership}
-\cvtag{Infrastructure management}
-\cvtag{Application Architecture}
-\cvtag{APIs}
-\cvtag{Automation}
-
-\cvsection{Languages}
-\cvskill{JavaScript}{5}
-\cvskill{Go}{4}
-\cvskill{Java}{3}
-\cvskill{PHP}{4}
-\cvskill{Shell}{5}
-\cvskill{Python, Ruby, scripting}{3}
+\cvachievement{\faBoxes}{System Design \& Architecture}{Large-scale distributed systems, platform design}
+\cvachievement{\faUsers}{Leadership}{Building, mentoring, and scaling high-performing teams}
+\cvachievement{\faCode}{Platforms \& APIs}{Ads APIs, ledgers, financial systems, enterprise integrations}
+\cvachievement{\faChartLine}{Execution}{Driving corss-functional alignment, delivering impact}
 
 \cvsection{Education}
 
