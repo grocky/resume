@@ -10,39 +10,39 @@ JOBS_DIR = jobs
 
 LATEXMK_OPTS=-pdf -output-directory=$(OUTPUT_DIR)
 
-serve: ## serve page locally
+serve: ## 🌐 serve page locally
 	go run server.go &
 
-watch-serve: ## watch files and reload on changes
+watch-serve: ## 👀 watch files and reload on changes
 	ls docs/* | entr reload-browser "Google Chrome"
 
-build: $(OUTPUT_DIR)/$(BASE).pdf ## Compile the PDF
+build: $(OUTPUT_DIR)/$(BASE).pdf ## 📄 compile the PDF
 
 $(OUTPUT_DIR)/%.pdf: $(SOURCE)
 	latexmk $(LATEXMK_OPTS) $^
 
 .PHONY: watch
-watch: $(SOURCE) ## compile and reload
+watch: $(SOURCE) ## 🔄 compile and reload
 	latexmk $(LATEXMK_OPTS) -pvc $^
 
 .PHONY: clean
-clean : ## remove all TeX-generated files in your local directory
+clean : ## 🧹 remove all TeX-generated files in your local directory
 	latexmk -output-directory=$(OUTPUT_DIR) -c
 	cd $(OUTPUT_DIR) && $(RM) -f $(BASE).bbl $(BASE).run.xml pdfa.xmpi
 
-infra-init: ## Initialize infrastructure
+infra-init: ## ☁️ initialize infrastructure
 	cd infrastructure; terraform init
 
-infra-plan: ## See terraform plan
+infra-plan: ## 📋 see terraform plan
 	cd infrastructure; terraform plan
 
-infra-apply: ## Apply terraform
+infra-apply: ## 🚀 apply terraform
 	cd infrastructure; terraform apply
 
 # Resume generation targets
 .PHONY: resume job-init extract-data job-from-pdf resume-from-pdf
 
-resume: ## Generate job-specific resume (example -  make resume JOB=2024-01-15_reddit_engineer)
+resume: ## 📝 generate job-specific resume (example: make resume JOB=2024-01-15_reddit_engineer)
 	@if [ -z "$(JOB)" ]; then \
 		echo "Error: JOB parameter required. Usage: make resume JOB=YYYY-MM-DD_company_role"; \
 		exit 1; \
@@ -69,7 +69,7 @@ resume: ## Generate job-specific resume (example -  make resume JOB=2024-01-15_r
 		exit 1; \
 	fi
 
-job-init: ## Initialize new job folder structure (example - make job-init JOB=2024-01-15_reddit_engineer)
+job-init: ## 📁 initialize new job folder structure manually (example: make job-init JOB=2024-01-15_reddit_engineer)
 	@if [ -z "$(JOB)" ]; then \
 		echo "Error: JOB parameter required. Usage: make job-init JOB=YYYY-MM-DD_company_role"; \
 		exit 1; \
@@ -89,12 +89,12 @@ job-init: ## Initialize new job folder structure (example - make job-init JOB=20
 	@echo "2. Customize $(JOBS_DIR)/$(JOB)/prompt_vars.yaml for this role"
 	@echo "3. Run 'make resume JOB=$(JOB)' to generate the resume"
 
-extract-data: ## Extract data from existing resume files (already completed)
+extract-data: ## 📊 extract data from existing resume files (already completed)
 	@echo "Data extraction already completed. YAML files are in data/ directory."
 	@echo "Files created:"
 	@ls -la data/*.yaml | awk '{print "  " $$9}'
 
-job-from-pdf: ## Create job from PDF posting (usage: make job-from-pdf PDF=path/to/job.pdf [JOB=custom-name])
+job-from-pdf: ## Extract job info from PDF posting (usage: make job-from-pdf PDF=path/to/job.pdf [JOB=custom-name])
 	@if [ -z "$(PDF)" ]; then \
 		echo "Error: PDF parameter required. Usage: make job-from-pdf PDF=path/to/job.pdf"; \
 		exit 1; \
@@ -103,20 +103,20 @@ job-from-pdf: ## Create job from PDF posting (usage: make job-from-pdf PDF=path/
 		echo "Error: PDF file not found: $(PDF)"; \
 		exit 1; \
 	fi
-	@echo "Processing PDF job posting: $(PDF)"
+	@echo "🔍 Processing PDF job posting: $(PDF)"
 	@if [ ! -d "venv" ]; then \
 		echo "Setting up Python virtual environment..."; \
 		python3 -m venv venv; \
 		venv/bin/pip install -r requirements.txt; \
 	fi
-	@echo "Extracting job information from PDF..."
+	@echo "📄 Extracting job information from PDF using AI..."
 	@if [ -n "$(JOB)" ]; then \
 		venv/bin/python tools/pdf_job_extractor.py "$(PDF)" --job-name="$(JOB)"; \
 	else \
 		venv/bin/python tools/pdf_job_extractor.py "$(PDF)"; \
 	fi
 
-resume-from-pdf: ## Complete workflow: PDF to resume (usage: make resume-from-pdf PDF=path/to/job.pdf [JOB=custom-name])
+resume-from-pdf: ## RECOMMENDED: Complete PDF to tailored resume workflow (usage: make resume-from-pdf PDF=path/to/job.pdf)
 	@if [ -z "$(PDF)" ]; then \
 		echo "Error: PDF parameter required. Usage: make resume-from-pdf PDF=path/to/job.pdf"; \
 		exit 1; \
@@ -136,5 +136,8 @@ resume-from-pdf: ## Complete workflow: PDF to resume (usage: make resume-from-pd
 GREEN  := $(shell tput -Txterm setaf 2)
 RESET  := $(shell tput -Txterm sgr0)
 
-help: ## print this help message
-	@awk -F ':|##' '/^[^\t].+?:.*?##/ { printf "${GREEN}%-20s${RESET}%s\n", $$1, $$NF }' $(MAKEFILE_LIST)
+help: ## 📋 print this help message
+	@echo "${GREEN}📄 Agent-Based Resume Framework${RESET}"
+	@echo "🚀 Quick Start: ${GREEN}make resume-from-pdf PDF=path/to/job-posting.pdf${RESET}"
+	@echo ""
+	@awk -F ':|##' '/^[^\t].+?:.*?##/ { printf "${GREEN}%-25s${RESET}%s\n", $$1, $$NF }' $(MAKEFILE_LIST)

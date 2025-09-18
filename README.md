@@ -14,9 +14,20 @@ An intelligent resume generation system that automatically creates job-specific 
 
 ## 🚀 Quick Start
 
-### Basic Setup
+### PDF Workflow (Recommended)
 ```bash
-# Initialize a new job application
+# Download PDF job posting from company website/job board
+# Then generate resume directly from PDF:
+make resume-from-pdf PDF=path/to/job-posting.pdf
+
+# Or two-step process for customization:
+make job-from-pdf PDF=path/to/job-posting.pdf  # Extracts job info
+make resume JOB=auto-generated-job-name         # Generates resume
+```
+
+### Manual Setup (Alternative)
+```bash
+# Initialize a new job application manually
 make job-init JOB=2024-01-15_reddit_engineer
 
 # Edit the job description
@@ -42,22 +53,28 @@ export OPENAI_API_KEY="your_key_here"
 
 ## 💼 How It Works
 
-### 1. **Job Analysis**
-The system analyzes job descriptions to extract:
+### 1. **PDF Intelligence**
+- **Download job posting PDF** from company website or job board
+- **Extract text content** using multiple PDF processing libraries
+- **AI-powered parsing** identifies company, role, requirements, and culture
+- **Auto-generates job folder** with structured information
+
+### 2. **Job Analysis**
+The system analyzes extracted content to identify:
 - Required vs preferred skills
 - Key responsibilities and expectations
 - Company culture indicators
 - Industry-specific keywords
 - Role focus (technical, leadership, or hybrid)
 
-### 2. **Content Optimization**
+### 3. **Content Optimization**
 For each role in your background:
 - **Prioritizes achievements** based on job relevance
 - **Rewrites bullet points** to emphasize matching skills
 - **Optimizes keywords** for ATS compatibility
 - **Maintains authenticity** - never fabricates information
 
-### 3. **Intelligent Selection**
+### 4. **Intelligent Selection**
 - Selects most relevant experiences
 - Adjusts achievement count based on role seniority
 - Emphasizes quantified accomplishments
@@ -95,10 +112,11 @@ resume-agent/
 ## 🎯 Benefits
 
 ### For Job Applications
+- **Zero Manual Entry**: PDF job postings automatically processed and analyzed
 - **Higher Relevance**: Each resume is tailored to specific job requirements
 - **ATS Optimization**: Keywords and formatting optimized for applicant tracking systems
 - **Consistency**: Professional quality maintained across all applications
-- **Speed**: Generate targeted resumes in seconds, not hours
+- **Speed**: Generate targeted resumes in seconds from job posting to PDF
 
 ### For Career Management
 - **Structured Data**: Professional background stored in maintainable YAML format
@@ -114,9 +132,21 @@ resume-agent/
 
 ## 🛠️ Advanced Usage
 
-### Command Line Options
+### PDF Workflow Commands
 ```bash
-# Disable AI features
+# Complete workflow: PDF to tailored resume
+make resume-from-pdf PDF=path/to/job-posting.pdf
+
+# Extract job info only (for review before generating)
+make job-from-pdf PDF=path/to/job-posting.pdf
+
+# Use custom job name instead of auto-generated
+make resume-from-pdf PDF=job.pdf JOB=2024-01-15_my_dream_job
+```
+
+### Advanced Options
+```bash
+# Disable AI features (use rule-based processing)
 make resume JOB=job-name NO_AI=1
 
 # Force re-analysis of job description
