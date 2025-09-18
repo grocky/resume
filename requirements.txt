@@ -5,3 +5,8 @@ MarkupSafe==3.0.2
 # AI dependencies (optional - install based on provider preference)
 openai>=1.0.0
 anthropic>=0.25.0
+
+# PDF processing dependencies (optional - multiple fallback options)
+pdfplumber>=0.9.0  # Recommended for most PDFs
+PyMuPDF>=1.23.0    # Alternative for complex layouts
+PyPDF2>=3.0.0      # Basic fallback option

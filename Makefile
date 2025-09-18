@@ -40,7 +40,7 @@ infra-apply: ## Apply terraform
 	cd infrastructure; terraform apply
 
 # Resume generation targets
-.PHONY: resume job-init extract-data
+.PHONY: resume job-init extract-data job-from-pdf resume-from-pdf
 
 resume: ## Generate job-specific resume (example -  make resume JOB=2024-01-15_reddit_engineer)
 	@if [ -z "$(JOB)" ]; then \
@@ -93,6 +93,45 @@ extract-data: ## Extract data from existing resume files (already completed)
 	@echo "Data extraction already completed. YAML files are in data/ directory."
 	@echo "Files created:"
 	@ls -la data/*.yaml | awk '{print "  " $$9}'
+
+job-from-pdf: ## Create job from PDF posting (usage: make job-from-pdf PDF=path/to/job.pdf [JOB=custom-name])
+	@if [ -z "$(PDF)" ]; then \
+		echo "Error: PDF parameter required. Usage: make job-from-pdf PDF=path/to/job.pdf"; \
+		exit 1; \
+	fi
+	@if [ ! -f "$(PDF)" ]; then \
+		echo "Error: PDF file not found: $(PDF)"; \
+		exit 1; \
+	fi
+	@echo "Processing PDF job posting: $(PDF)"
+	@if [ ! -d "venv" ]; then \
+		echo "Setting up Python virtual environment..."; \
+		python3 -m venv venv; \
+		venv/bin/pip install -r requirements.txt; \
+	fi
+	@echo "Extracting job information from PDF..."
+	@if [ -n "$(JOB)" ]; then \
+		venv/bin/python tools/pdf_job_extractor.py "$(PDF)" --job-name="$(JOB)"; \
+	else \
+		venv/bin/python tools/pdf_job_extractor.py "$(PDF)"; \
+	fi
+
+resume-from-pdf: ## Complete workflow: PDF to resume (usage: make resume-from-pdf PDF=path/to/job.pdf [JOB=custom-name])
+	@if [ -z "$(PDF)" ]; then \
+		echo "Error: PDF parameter required. Usage: make resume-from-pdf PDF=path/to/job.pdf"; \
+		exit 1; \
+	fi
+	@echo "🔄 Complete PDF to Resume Workflow"
+	@echo "Step 1: Extracting job information from PDF..."
+	@EXTRACTED_JOB=$$(make job-from-pdf PDF="$(PDF)" $(if $(JOB),JOB="$(JOB)",) | grep "Job folder created:" | awk '{print $$4}' | xargs basename); \
+	if [ -z "$$EXTRACTED_JOB" ]; then \
+		echo "❌ Failed to extract job from PDF"; \
+		exit 1; \
+	fi; \
+	echo "✅ Job extracted: $$EXTRACTED_JOB"; \
+	echo "Step 2: Generating tailored resume..."; \
+	make resume JOB="$$EXTRACTED_JOB"; \
+	echo "🎉 Complete! Resume generated from PDF job posting."
 
 GREEN  := $(shell tput -Txterm setaf 2)
 RESET  := $(shell tput -Txterm sgr0)
