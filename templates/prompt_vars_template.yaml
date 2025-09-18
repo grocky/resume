@@ -1,0 +1,39 @@
+# Job-specific prompt variables template
+# Copy this to jobs/YYYY-MM-DD_company_role/prompt_vars.yaml and customize
+
+# Job details
+target_role: "Senior Software Engineer"
+company_name: "Example Company"
+company_culture: "startup"  # Options: startup, enterprise, tech_giant, financial, etc.
+
+# Key requirements from job description
+key_requirements:
+  - "Python"
+  - "API design"
+  - "Leadership"
+  - "System design"
+
+# Nice-to-have skills
+nice_to_have:
+  - "Go"
+  - "Kubernetes"
+  - "AWS"
+
+# Areas to emphasize in this application
+emphasis_areas:
+  - "technical leadership"
+  - "scalability"
+  - "team building"
+
+# Content preferences
+content_preferences:
+  max_achievements_per_role: 4
+  prioritize_quantified: true
+  include_patents: true
+  highlight_recent_roles: true
+
+# AI generation preferences
+ai_instructions:
+  tone: "professional"  # Options: professional, technical, executive
+  focus: "leadership"   # Options: technical, leadership, hybrid
+  industry_keywords: []  # Add industry-specific terms here

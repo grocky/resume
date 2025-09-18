@@ -1,0 +1,54 @@
+# Education, certifications, and patents extracted from Rocky_Gray_Resume.tex
+
+education:
+  - degree: "B.E. in Computer Engineering"
+    institution: "Vanderbilt University"
+    graduation_year: null  # Not specified in original resume
+
+certifications:
+  - name: "Solutions Architect Associate"
+    provider: "AWS"
+    date: "Jan 2019"
+    credential_id: "EET55E012B1QQC5L"
+    icon: "faAws"
+
+  - name: "Certified Secure Software Engineer Associate"
+    provider: null  # Not specified
+    date: "March 2020"
+    credential_id: null
+    icon: "faLock"
+
+patents:
+  - title: "Finite state machine driven workflows"
+    date: "Nov. 12 2019"
+    patent_number: "US10474506B1"
+
+  - title: "Distribution of media with tracking and analysis of media usage for royalty, loyalty and collection of metadata"
+    date: "May. 4 2021"
+    patent_number: "US10997611B2"
+
+  - title: "Time-based token trust depreciation"
+    date: "Nov. 9 2021"
+    patent_number: "US11171945B2"
+
+  - title: "Systems configured to manage user-related external party-activity software objects by using machine-readable indicia and methods of use thereof"
+    date: "Sept. 7 2021"
+    patent_number: "US11113678B2"
+
+# Strengths section from the resume
+strengths:
+  - area: "System Design & Architecture"
+    description: "Large-scale distributed systems, platform design"
+    icon: "faBoxes"
+
+  - area: "Leadership"
+    description: "Building, mentoring, and scaling high-performing teams"
+    icon: "faUsers"
+
+  - area: "Platforms & APIs"
+    description: "Ads APIs, ledgers, financial systems, enterprise integrations"
+    icon: "faCode"
+
+  - area: "Execution"
+    description: "Driving cross-functional alignment, delivering impact"
+    icon: "faChartLine"

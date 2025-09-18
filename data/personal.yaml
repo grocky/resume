@@ -1,0 +1,18 @@
+# Personal information extracted from Rocky_Gray_Resume.tex
+name: "Rocky Gray"
+tagline: "Software Engineering Leader"
+photo: "headshot.png"
+
+contact:
+  location: "Washington D.C Metro Area"
+  homepage: "www.rockygray.com"
+  email: "rocky.grayjr@gmail.com"
+  linkedin: "grocky"
+  github: "grocky"
+
+# Personal branding
+life_philosophy: "Never give up."
+
+# Footer information
+footer_text: "Find the latest version of this document at resume.rockygray.com"
+footer_url: "https://resume.rockygray.com"

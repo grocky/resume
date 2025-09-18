@@ -1,0 +1,43 @@
+# Professional background extracted from Rocky_Gray_Resume.tex
+roles:
+  - company: "Reddit"
+    title: "Engineering Manager"
+    duration: "Dec 2024 --- Oct 2025"
+    location: "Remote --- San Francisco, CA"
+    summary: "Led the Ads API Platform and Business Engineering teams, driving partner integrations, platform reliability, and cross-functional delivery to unlock new revenue opportunities."
+    key_themes: ["Leadership", "API Platform", "Data Engineering"]
+
+  - company: "Cash App"
+    title: "Engineering Manager"
+    duration: "Feb 2023 --- Aug 2024"
+    location: "Remote --- San Francisco, CA"
+    summary: "Accountable for the real-time distributed ledger that tracks all financial transactions within the Cash App ecosystem."
+    key_themes: ["Leadership", "API Platform", "Data Engineering"]
+
+  - company: "Twitter"
+    title: "Engineering Manager"
+    duration: "Nov 2020 --- Nov 2022"
+    location: "Remote --- San Francisco, CA"
+    summary: "Scaled global Ads API & Data Service teams from 5 to 15 engineers, creating two specialized groups."
+    key_themes: ["Leadership", "API Platform", "Data Engineering"]
+
+  - company: "Capital One"
+    title: "Senior Software Engineering Manager"
+    duration: "Apr 2018 --- October 2020"
+    location: "McLean, VA"
+    summary: "Tech lead and people leader for the Focus platform, enabling secure, scalable document storage and third-party integrations."
+    key_themes: ["Leadership", "API Platform", "Data Engineering", "Cloud Infrastructure"]
+
+  - company: "Storyblocks"
+    title: "Lead Software Engineer"
+    duration: "Dec 2014 --- Mar 2018"
+    location: "Arlington, VA"
+    summary: "Tech lead of Strategic Technologies team, providing platforms, cloud infrastructure, data pipelines, and enterprise APIs."
+    key_themes: ["Leadership", "API Platform", "Data Engineering", "Cloud Infrastructure"]
+
+  - company: "Capital One"
+    title: "Software Engineer"
+    duration: "Jul 2012 --- Dec 2014"
+    location: "Vienna, VA"
+    summary: "Built first REST APIs for credit card resources and co-developed the API Developer Portal—banking's first public APIs."
+    key_themes: ["API Platform", "Data Engineering"]

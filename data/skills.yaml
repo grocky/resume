@@ -1,0 +1,119 @@
+# Skills and technologies extracted from Rocky_Gray_Resume.tex
+# Organized by category and frequency of appearance
+
+leadership_skills:
+  - "Team Leadership"
+  - "People Development"
+  - "Strategic Planning"
+  - "Cross-functional Delivery"
+  - "Engineering Management"
+  - "Technical Leadership"
+  - "Mentorship"
+  - "Organizational Design"
+
+technical_domains:
+  - "API Platform"
+  - "Data Engineering"
+  - "System Design & Architecture"
+  - "Distributed Systems"
+  - "Platform Engineering"
+  - "Cloud Infrastructure"
+  - "Financial Technology"
+
+programming_languages:
+  - "Go"
+  - "Python"
+  - "Java"
+  - "Scala"
+  - "NodeJS"
+  - "PHP"
+  - "Ruby"
+
+frameworks_and_apis:
+  - "OpenAPI"
+  - "GraphQL"
+  - "REST APIs"
+  - "React"
+  - "Angular"
+
+cloud_and_infrastructure:
+  - "AWS"
+  - "Kubernetes"
+  - "Docker"
+  - "Terraform"
+  - "CloudFormation"
+  - "Ansible"
+
+databases:
+  - "Aurora MySQL"
+  - "Cassandra"
+  - "MySQL"
+  - "Postgres"
+  - "MongoDB"
+
+# Skills organized by company for context
+by_company:
+  Reddit:
+    - "Leadership"
+    - "API Platform"
+    - "Data Engineering"
+    - "Go"
+    - "Python"
+    - "OpenAPI"
+
+  Cash_App:
+    - "Leadership"
+    - "API Platform"
+    - "Data Engineering"
+    - "Java"
+
+  Twitter:
+    - "Leadership"
+    - "API Platform"
+    - "Data Engineering"
+    - "Scala"
+    - "Java"
+    - "GraphQL"
+    - "OpenAPI"
+
+  Capital_One_Senior:
+    - "NodeJS"
+    - "Go"
+    - "Java"
+    - "Kubernetes"
+    - "Aurora MySQL"
+    - "Cassandra"
+    - "Terraform"
+    - "CloudFormation"
+    - "Ansible"
+    - "AWS"
+    - "API Platform"
+    - "OpenAPI"
+    - "Data Engineering"
+    - "Leadership"
+
+  Storyblocks:
+    - "PHP"
+    - "NodeJS"
+    - "Scala"
+    - "React"
+    - "Angular"
+    - "Python"
+    - "Ruby"
+    - "Docker"
+    - "MySQL"
+    - "Postgres"
+    - "MongoDB"
+    - "CloudFormation"
+    - "Ansible"
+    - "Data Engineering"
+    - "API Platform"
+    - "OpenAPI"
+    - "AWS"
+    - "Leadership"
+
+  Capital_One_Engineer:
+    - "API"
+    - "Java"
+    - "OpenAPI"
+    - "Data Engineering"

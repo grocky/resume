@@ -1,0 +1,102 @@
+# Achievements by company extracted from Rocky_Gray_Resume.tex
+by_company:
+  Reddit:
+    - achievement: "Led the Ads API Platform and Business Engineering teams"
+      impact: "driving partner integrations, platform reliability, and cross-functional delivery to unlock new revenue opportunities"
+      quantified: false
+      keywords: ["leadership", "api platform", "platform reliability", "revenue"]
+
+    - achievement: "Rate Limit Redesign"
+      impact: "Coordinated Reddit's first private beta launch for a platform project by aligning with external partners and 20+ internal teams to define and implement upstream system policies"
+      quantified: true
+      quantification: "20+ internal teams"
+      keywords: ["coordination", "beta launch", "platform", "system design"]
+
+    - achievement: "MCP Server Implementation"
+      impact: "Guided the team that built the first MCP server in the Ads organization, which earned top recognition at Reddit's company-wide hackathon. Established myself as a subject matter expert (SME) in MCP design and implementation"
+      quantified: false
+      keywords: ["technical leadership", "innovation", "hackathon", "subject matter expert"]
+
+  Cash_App:
+    - achievement: "Real-time distributed ledger accountability"
+      impact: "Accountable for the real-time distributed ledger that tracks all financial transactions within the Cash App ecosystem"
+      quantified: false
+      keywords: ["distributed systems", "financial technology", "real-time", "accountability"]
+
+    - achievement: "Core infrastructure leadership"
+      impact: "Directed teams across core infrastructure for money movement, balancing reliability with innovation"
+      quantified: false
+      keywords: ["infrastructure", "money movement", "reliability", "innovation"]
+
+    - achievement: "Engineering mentorship and system design"
+      impact: "Mentored engineers and established strong system design practices, helping scale the platform for growth and resilience"
+      quantified: false
+      keywords: ["mentorship", "system design", "scalability", "resilience"]
+
+  Twitter:
+    - achievement: "Team scaling and organization"
+      impact: "Scaled global Ads API & Data Service teams from 5 to 15 engineers, creating two specialized groups"
+      quantified: true
+      quantification: "5 to 15 engineers"
+      keywords: ["team scaling", "organizational design", "specialization"]
+
+    - achievement: "People development and leadership"
+      impact: "Promoted multiple engineers (ICs to Staff and one to EM), demonstrating strong people development and leadership"
+      quantified: true
+      quantification: "multiple promotions"
+      keywords: ["people development", "career growth", "leadership"]
+
+    - achievement: "Multi-year roadmap definition"
+      impact: "Defined a multi-year roadmap to improve API development velocity and cross-functional delivery"
+      quantified: false
+      keywords: ["strategic planning", "api development", "velocity", "cross-functional"]
+
+    - achievement: "Architectural pattern adoption"
+      impact: "Drove adoption of an architectural pattern enabling parallel product experimentation, accelerating both ads and API innovation"
+      quantified: false
+      keywords: ["architecture", "experimentation", "innovation", "parallel development"]
+
+  Capital_One_Senior:
+    - achievement: "Focus platform leadership"
+      impact: "Tech lead and people leader for the Focus platform, enabling secure, scalable document storage and third-party integrations"
+      quantified: false
+      keywords: ["technical leadership", "platform", "security", "scalability", "integrations"]
+
+    - achievement: "Architecture improvements"
+      impact: "Delivered dual-region architecture, asynchronous virus scanning, and object-level encryption to strengthen resiliency"
+      quantified: false
+      keywords: ["architecture", "resilience", "security", "encryption", "scanning"]
+
+    - achievement: "Technical Excellence Award"
+      impact: "Won a Technical Excellence Award for innovation, reliability, and platform growth"
+      quantified: false
+      keywords: ["recognition", "innovation", "reliability", "growth"]
+
+    - achievement: "Patent inventor"
+      impact: "Co-inventor on multiple patents derived from platform designs"
+      quantified: true
+      quantification: "multiple patents"
+      keywords: ["innovation", "intellectual property", "platform design"]
+
+  Storyblocks:
+    - achievement: "Strategic Technologies team leadership"
+      impact: "Tech lead of Strategic Technologies team, providing platforms, cloud infrastructure, data pipelines, and enterprise APIs"
+      quantified: false
+      keywords: ["technical leadership", "platforms", "infrastructure", "data pipelines", "apis"]
+
+    - achievement: "AWS migration and revenue generation"
+      impact: "Led AWS migration, event-driven KPI pipeline, and established enterprise APIs that generated $1M+ new revenue"
+      quantified: true
+      quantification: "$1M+ new revenue"
+      keywords: ["aws migration", "event-driven", "kpi", "enterprise apis", "revenue"]
+
+    - achievement: "Engineering advocacy and mentorship"
+      impact: "Advocated for engineers, provided mentorship, and supported organizational growth"
+      quantified: false
+      keywords: ["advocacy", "mentorship", "organizational growth"]
+
+  Capital_One_Engineer:
+    - achievement: "First REST APIs for credit cards"
+      impact: "Built first REST APIs for credit card resources and co-developed the API Developer Portal—banking's first public APIs"
+      quantified: false
+      keywords: ["rest apis", "credit cards", "developer portal", "banking", "first public apis"]
