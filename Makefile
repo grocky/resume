@@ -53,8 +53,21 @@ resume: ## Generate job-specific resume (example -  make resume JOB=2024-01-15_r
 		exit 1; \
 	fi
 	@echo "Generating resume for job: $(JOB)"
-	@echo "Note: AI generation not yet implemented - this will compile the base template"
-	latexmk $(LATEXMK_OPTS) -jobname=$(JOB)_resume $(SOURCE)
+	@echo "Using structured data and modular templates..."
+	@if [ ! -d "venv" ]; then \
+		echo "Setting up Python virtual environment..."; \
+		python3 -m venv venv; \
+		venv/bin/pip install -r requirements.txt; \
+	fi
+	venv/bin/python tools/generate.py --job=$(JOB)
+	@if [ -f "$(JOBS_DIR)/$(JOB)/generated/resume.tex" ]; then \
+		echo "Compiling LaTeX to PDF..."; \
+		latexmk $(LATEXMK_OPTS) -jobname=$(JOB)_resume $(JOBS_DIR)/$(JOB)/generated/resume.tex; \
+		echo "Resume generated successfully: docs/$(JOB)_resume.pdf"; \
+	else \
+		echo "Error: LaTeX file not generated"; \
+		exit 1; \
+	fi
 
 job-init: ## Initialize new job folder structure (example - make job-init JOB=2024-01-15_reddit_engineer)
 	@if [ -z "$(JOB)" ]; then \
