@@ -4,6 +4,10 @@ SOURCE ?= Rocky_Gray_Resume.tex
 BASE = "$(basename $(SOURCE))"
 OUTPUT_DIR = docs
 
+# Job-specific variables
+JOB ?=
+JOBS_DIR = jobs
+
 LATEXMK_OPTS=-pdf -output-directory=$(OUTPUT_DIR)
 
 serve: ## serve page locally
@@ -34,6 +38,48 @@ infra-plan: ## See terraform plan
 
 infra-apply: ## Apply terraform
 	cd infrastructure; terraform apply
+
+# Resume generation targets
+.PHONY: resume job-init extract-data
+
+resume: ## Generate job-specific resume (example -  make resume JOB=2024-01-15_reddit_engineer)
+	@if [ -z "$(JOB)" ]; then \
+		echo "Error: JOB parameter required. Usage: make resume JOB=YYYY-MM-DD_company_role"; \
+		exit 1; \
+	fi
+	@if [ ! -d "$(JOBS_DIR)/$(JOB)" ]; then \
+		echo "Error: Job directory $(JOBS_DIR)/$(JOB) does not exist."; \
+		echo "Run 'make job-init JOB=$(JOB)' first."; \
+		exit 1; \
+	fi
+	@echo "Generating resume for job: $(JOB)"
+	@echo "Note: AI generation not yet implemented - this will compile the base template"
+	latexmk $(LATEXMK_OPTS) -jobname=$(JOB)_resume $(SOURCE)
+
+job-init: ## Initialize new job folder structure (example - make job-init JOB=2024-01-15_reddit_engineer)
+	@if [ -z "$(JOB)" ]; then \
+		echo "Error: JOB parameter required. Usage: make job-init JOB=YYYY-MM-DD_company_role"; \
+		exit 1; \
+	fi
+	@if [ -d "$(JOBS_DIR)/$(JOB)" ]; then \
+		echo "Warning: Job directory $(JOBS_DIR)/$(JOB) already exists."; \
+	else \
+		echo "Creating job folder: $(JOBS_DIR)/$(JOB)"; \
+		mkdir -p $(JOBS_DIR)/$(JOB)/generated; \
+		cp templates/job_description_template.md $(JOBS_DIR)/$(JOB)/job_description.md; \
+		cp templates/prompt_vars_template.yaml $(JOBS_DIR)/$(JOB)/prompt_vars.yaml; \
+		echo "Job folder created successfully!"; \
+	fi
+	@echo ""
+	@echo "Next steps:"
+	@echo "1. Edit $(JOBS_DIR)/$(JOB)/job_description.md with the job posting"
+	@echo "2. Customize $(JOBS_DIR)/$(JOB)/prompt_vars.yaml for this role"
+	@echo "3. Run 'make resume JOB=$(JOB)' to generate the resume"
+
+extract-data: ## Extract data from existing resume files (already completed)
+	@echo "Data extraction already completed. YAML files are in data/ directory."
+	@echo "Files created:"
+	@ls -la data/*.yaml | awk '{print "  " $$9}'
 
 GREEN  := $(shell tput -Txterm setaf 2)
 RESET  := $(shell tput -Txterm sgr0)
