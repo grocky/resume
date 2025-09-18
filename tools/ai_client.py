@@ -71,7 +71,7 @@ class AIClient:
 
         # Rate limiting
         self.last_request_time = {}
-        self.min_request_interval = 1.0  # seconds between requests
+        self.min_request_interval = 3.0  # seconds between requests
 
     def _load_settings(self) -> Dict:
         """Load AI settings from configuration"""
@@ -148,9 +148,12 @@ class AIClient:
             client = self._get_openai_client()
 
             if model is None:
-                model = self.settings.get('model_preferences', {}).get('openai', 'gpt-4')
+                model = self.settings.get('model_preferences', {}).get('openai', 'gpt-4.1')
 
             self._rate_limit(AIProvider.OPENAI)
+
+            logger.info(f"Calling OpenAI API - Model: {model}, Max Tokens: {max_tokens}, Prompt Length: {len(prompt)}")
+            logger.info(f"Prompt: {prompt[:100]}")
 
             response = client.chat.completions.create(
                 model=model,
@@ -310,10 +313,11 @@ TARGET JOB REQUIREMENTS:
 
 Please rewrite the achievement to:
 1. Emphasize aspects most relevant to the target role
-2. Use keywords that align with job requirements
+2. Use keywords that align with job requirements if applicable
 3. Maintain factual accuracy - do not exaggerate or fabricate
 4. Keep the professional tone and impact-focused language
 5. Ensure it remains authentic to the original accomplishment
+6. Limit to short bullet point style if possible
 
 Provide only the rewritten achievement without explanation.
 """

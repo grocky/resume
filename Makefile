@@ -123,7 +123,7 @@ resume-from-pdf: ## RECOMMENDED: Complete PDF to tailored resume workflow (usage
 	fi
 	@echo "🔄 Complete PDF to Resume Workflow"
 	@echo "Step 1: Extracting job information from PDF..."
-	@EXTRACTED_JOB=$$(make job-from-pdf PDF="$(PDF)" $(if $(JOB),JOB="$(JOB)",) | grep "Job folder created:" | awk '{print $$4}' | xargs basename); \
+	@EXTRACTED_JOB=$$(make job-from-pdf PDF="$(PDF)" $(if $(JOB),JOB="$(JOB)",) | grep "Job folder created:" | awk '{print $$5}' | xargs basename); \
 	if [ -z "$$EXTRACTED_JOB" ]; then \
 		echo "❌ Failed to extract job from PDF"; \
 		exit 1; \

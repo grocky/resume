@@ -11,7 +11,7 @@ template:
 ai:
   default_provider: "openai"  # options: openai, anthropic
   model_preferences:
-    openai: "gpt-4"
+    openai: "gpt-4.1-mini"
     anthropic: "claude-3-sonnet"
   max_tokens: 2000
   temperature: 0.3
