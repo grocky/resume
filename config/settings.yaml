@@ -1,0 +1,29 @@
+# Global settings for the resume generation system
+# Edit these values to customize the behavior
+
+# Template settings
+template:
+  base_template: "templates/base_resume.tex"
+  output_format: "pdf"
+  preserve_styling: true
+
+# AI integration settings
+ai:
+  default_provider: "openai"  # options: openai, anthropic
+  model_preferences:
+    openai: "gpt-4"
+    anthropic: "claude-3-sonnet"
+  max_tokens: 2000
+  temperature: 0.3
+
+# Content generation settings
+content:
+  max_achievements_per_role: 4
+  prioritize_quantified: true
+  maintain_authenticity: true
+
+# Output settings
+output:
+  single_page_target: true
+  ats_friendly: true
+  include_contact_footer: true
