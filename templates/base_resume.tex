@@ -1,0 +1,61 @@
+%%%%%%%%%%%%%%%%%
+% Modular AltaCV Resume Template
+% Based on: https://github.com/liantze/AltaCV/blob/3881643ca22c17e01f4860a44d449ae8b32e63e8/sample.tex
+% Converted to Jinja2 template for dynamic content generation
+%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+\geometry{left=1.2cm,right=1.2cm,top=1.25cm,bottom=1.25cm,columnsep=1.2cm,paperheight=17.5in}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage{hyperref}
+\usepackage[default]{lato}
+
+% Change the colours if you want to
+\definecolor{DeepRed}{HTML}{990000}
+\definecolor{PastelRed}{HTML}{EE9999}
+\definecolor{DarkGray}{HTML}{161616}
+\definecolor{SlateGray}{HTML}{2E2E2E}
+\definecolor{LightGray}{HTML}{666666}
+\colorlet{name}{DarkGray}
+\colorlet{tagline}{SlateGray}
+\colorlet{heading}{SlateGray}
+\colorlet{headingrule}{DeepRed}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{DeepRed}
+\colorlet{emphasis}{SlateGray}
+\colorlet{body}{LightGray}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{\small\textbullet}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+
+{% include 'sections/header.tex' %}
+
+\makecvheader{}
+
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+{% include 'sections/experience.tex' %}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+{% include 'sections/sidebar.tex' %}
+
+\end{paracol}
+
+\end{document}

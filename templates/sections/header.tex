@@ -1,0 +1,23 @@
+% Header section with personal information
+\name{{ "{" }}{{ personal.name }}{{ "}" }}
+\tagline{{ "{" }}{{ personal.tagline }}{{ "}" }}
+{%- if personal.photo %}
+\photoR{{ "{" }}2.5cm{{ "}" }}{{ "{" }}{{ personal.photo.replace('.png', '').replace('.jpg', '') }}{{ "}" }}
+{%- endif %}
+\personalinfo{{ "{" }}%
+  {%- if personal.contact.location %}
+  \location{{ "{" }}{{ personal.contact.location }}{{ "}" }}
+  {%- endif %}
+  {%- if personal.contact.homepage %}
+  \homepage{{ "{" }}{{ personal.contact.homepage }}{{ "}" }}\\
+  {%- endif %}
+  {%- if personal.contact.email %}
+  \email{{ "{" }}{{ personal.contact.email }}{{ "}" }}
+  {%- endif %}
+  {%- if personal.contact.linkedin %}
+  \linkedin{{ "{" }}{{ personal.contact.linkedin }}{{ "}" }}
+  {%- endif %}
+  {%- if personal.contact.github %}
+  \github{{ "{" }}{{ personal.contact.github }}{{ "}" }}
+  {%- endif %}
+{{ "}" }}

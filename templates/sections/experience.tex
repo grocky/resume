@@ -1,0 +1,25 @@
+% Experience section with dynamic content
+\cvsection{{ "{" }}Experience{{ "}" }}
+
+{%- for role in selected_roles %}
+\cvevent{{ "{" }}{{ role.title }}{{ "}" }}{{ "{" }}{{ role.company }}{{ "}" }}{{ "{" }}{{ role.duration }}{{ "}" }}{{ "{" }}{{ role.location }}{{ "}" }}
+
+{%- if role.achievements %}
+\begin{{ "{" }}itemize{{ "}" }}
+{%- for achievement in role.achievements %}
+    \item {{ achievement.content }}
+{%- endfor %}
+\end{{ "{" }}itemize{{ "}" }}
+{%- endif %}
+
+{%- if role.tags %}
+{%- for tag in role.tags %}
+\cvtag{{ "{" }}{{ tag }}{{ "}" }}
+{%- endfor %}
+{%- endif %}
+
+{%- if not loop.last %}
+\divider{{ "{" }}{{ "}" }}
+{%- endif %}
+
+{%- endfor %}

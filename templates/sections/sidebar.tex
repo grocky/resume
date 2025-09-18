@@ -1,0 +1,46 @@
+% Sidebar content including philosophy, strengths, education, etc.
+
+{%- if personal.life_philosophy %}
+\cvsection{{ "{" }}Life Philosophy{{ "}" }}
+\begin{{ "{" }}quote{{ "}" }}
+``{{ personal.life_philosophy }}''
+\end{{ "{" }}quote{{ "}" }}
+{%- endif %}
+
+{%- if strengths %}
+\cvsection{{ "{" }}Strengths{{ "}" }}
+
+{%- for strength in strengths %}
+\cvachievement{{ "{" }}\{{ strength.icon }}{{ "}" }}{{ "{" }}{{ strength.area }}{{ "}" }}{{ "{" }}{{ strength.description }}{{ "}" }}
+{%- endfor %}
+{%- endif %}
+
+{%- if education %}
+\cvsection{{ "{" }}Education{{ "}" }}
+
+{%- for edu in education %}
+\cvevent{{ "{" }}{{ edu.degree }}{{ "}" }}{{ "{" }}{{ edu.institution }}{{ "}" }}{{ "{" }}{{ "}" }}{{ "{" }}{{ "}" }}
+{%- endfor %}
+{%- endif %}
+
+{%- if certifications %}
+\cvsection{{ "{" }}Certifications{{ "}" }}
+{%- for cert in certifications %}
+\cvachievement{{ "{" }}\{{ cert.icon }}{{ "}" }}{{ "{" }}{{ cert.name }}{{ "}" }}{{ "{" }}{{ cert.date }}{% if cert.credential_id %}: {{ cert.credential_id }}{% endif %}{{ "}" }}
+{%- endfor %}
+{%- endif %}
+
+{%- if patents %}
+\cvsection{{ "{" }}Patents{{ "}" }}
+{%- for patent in patents %}
+\cvpatent{{ "{" }}{{ patent.title }}{{ "}" }}{{ "{" }}{{ patent.date }}{{ "}" }}{{ "{" }}{{ patent.patent_number }}{{ "}" }}
+{%- endfor %}
+{%- endif %}
+
+\vspace*{{ "{" }}\fill{{ "}" }}
+
+{%- if personal.footer_text and personal.footer_url %}
+\begin{{ "{" }}quote{{ "}" }}
+    {{ "{" }}\tiny {{ personal.footer_text }} \href{{ "{" }}{{ personal.footer_url }}{{ "}" }}{{ "{" }}{{ personal.footer_url.replace('https://', '') }}{{ "}" }}{{ "}" }}
+\end{{ "{" }}quote{{ "}" }}
+{%- endif %}
