@@ -17,6 +17,7 @@ import os
 import sys
 import yaml
 import logging
+import re
 from pathlib import Path
 from typing import Dict, Optional, Any
 from dataclasses import dataclass
@@ -238,8 +239,6 @@ Focus on information that would be useful for tailoring a resume.
         experience_level = ""
 
         # Parse sections using regex patterns
-        import re
-
         # Extract basic info
         company_match = re.search(r'Company Name:\s*(.+)', ai_response, re.IGNORECASE)
         if company_match:
