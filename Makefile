@@ -1,14 +1,15 @@
 .DEFAULT_GOAL := help
 
 SOURCE ?= Rocky_Gray_Resume.tex
-BASE = "$(basename $(SOURCE))"
-OUTPUT_DIR = docs
+BASE = $(basename $(SOURCE))
+DOCS_DIR = docs
+OUTPUT_DIR = output
 
 # Job-specific variables
 JOB ?=
 JOBS_DIR = jobs
 
-LATEXMK_OPTS=-pdf -output-directory=$(OUTPUT_DIR)
+LATEXMK_OPTS=-pdf -output-directory=$(OUTPUT_DIR) -f
 
 serve: ## 🌐 serve page locally
 	go run server.go &
@@ -16,7 +17,7 @@ serve: ## 🌐 serve page locally
 watch-serve: ## 👀 watch files and reload on changes
 	ls docs/* | entr reload-browser "Google Chrome"
 
-build: $(OUTPUT_DIR)/$(BASE).pdf ## 📄 compile the PDF
+build: $(DOCS_DIR)/$(BASE).pdf ## 📄 compile the PDF
 
 .PHONY: watch
 watch: $(SOURCE) ## 🔄 compile and reload
@@ -39,11 +40,13 @@ infra-apply: ## 🚀 apply terraform
 # Resume generation targets
 .PHONY: resume job-init extract-data job-from-pdf resume-from-pdf
 
-$(OUTPUT_DIR)/Rocky_Gray_Resume.pdf: $(SOURCE)
+$(DOCS_DIR)/Rocky_Gray_Resume.pdf: $(SOURCE)
 	latexmk $(LATEXMK_OPTS) $^
+	@cp $(OUTPUT_DIR)/$(BASE).pdf $@
 
-docs/%.pdf: jobs/%/generated/resume.tex
-	latexmk $(LATEXMK_OPTS) -jobname=$(basename $*) $<
+jobs/%/generated/Rocky_Gray_Resume.pdf: jobs/%/generated/resume.tex
+	latexmk $(LATEXMK_OPTS) -jobname=$(basename $*) $< 
+	@cp $(OUTPUT_DIR)/$(basename $*).pdf $@
 
 resume: ## 📝 generate job-specific resume (example: make resume JOB=2024-01-15_reddit_engineer)
 	@if [ -z "$(JOB)" ]; then \
@@ -65,7 +68,7 @@ resume: ## 📝 generate job-specific resume (example: make resume JOB=2024-01-1
 	venv/bin/python tools/generate.py --job=$(JOB)
 	@if [ -f "$(JOBS_DIR)/$(JOB)/generated/resume.tex" ]; then \
 		echo "Compiling LaTeX to PDF..."; \
-		make docs/$(JOB)_resume.pdf \
+		make jobs/$(JOB)/generated/Rocky_Gray_Resume.pdf \
 		echo "Resume generated successfully: docs/$(JOB)_resume.pdf"; \
 	else \
 		echo "Error: LaTeX file not generated"; \
