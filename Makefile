@@ -18,9 +18,6 @@ watch-serve: ## 👀 watch files and reload on changes
 
 build: $(OUTPUT_DIR)/$(BASE).pdf ## 📄 compile the PDF
 
-$(OUTPUT_DIR)/%.pdf: $(SOURCE)
-	latexmk $(LATEXMK_OPTS) $^
-
 .PHONY: watch
 watch: $(SOURCE) ## 🔄 compile and reload
 	latexmk $(LATEXMK_OPTS) -pvc $^
@@ -42,6 +39,12 @@ infra-apply: ## 🚀 apply terraform
 # Resume generation targets
 .PHONY: resume job-init extract-data job-from-pdf resume-from-pdf
 
+$(OUTPUT_DIR)/Rocky_Gray_Resume.pdf: $(SOURCE)
+	latexmk $(LATEXMK_OPTS) $^
+
+docs/%.pdf: jobs/%/generated/resume.tex
+	latexmk $(LATEXMK_OPTS) -jobname=$(basename $*) $<
+
 resume: ## 📝 generate job-specific resume (example: make resume JOB=2024-01-15_reddit_engineer)
 	@if [ -z "$(JOB)" ]; then \
 		echo "Error: JOB parameter required. Usage: make resume JOB=YYYY-MM-DD_company_role"; \
@@ -62,7 +65,7 @@ resume: ## 📝 generate job-specific resume (example: make resume JOB=2024-01-1
 	venv/bin/python tools/generate.py --job=$(JOB)
 	@if [ -f "$(JOBS_DIR)/$(JOB)/generated/resume.tex" ]; then \
 		echo "Compiling LaTeX to PDF..."; \
-		latexmk $(LATEXMK_OPTS) -jobname=$(JOB)_resume $(JOBS_DIR)/$(JOB)/generated/resume.tex; \
+		make docs/$(JOB)_resume.pdf \
 		echo "Resume generated successfully: docs/$(JOB)_resume.pdf"; \
 	else \
 		echo "Error: LaTeX file not generated"; \

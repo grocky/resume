@@ -37,7 +37,7 @@ patents:
 
 # Strengths section from the resume
 strengths:
-  - area: "System Design & Architecture"
+  - area: "System Design \\& Architecture"
     description: "Large-scale distributed systems, platform design"
     icon: "faBoxes"
 
@@ -45,7 +45,7 @@ strengths:
     description: "Building, mentoring, and scaling high-performing teams"
     icon: "faUsers"
 
-  - area: "Platforms & APIs"
+  - area: "Platforms \\& APIs"
     description: "Ads APIs, ledgers, financial systems, enterprise integrations"
     icon: "faCode"
 

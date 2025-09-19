@@ -12,14 +12,14 @@
 \end{{ "{" }}itemize{{ "}" }}
 {%- endif %}
 
-{%- if role.tags %}
-{%- for tag in role.tags %}
+{% if role.tags %}
+{%- for tag in role.tags -%}
 \cvtag{{ "{" }}{{ tag }}{{ "}" }}
-{%- endfor %}
-{%- endif %}
+{%- endfor -%}
+{% endif %}
 
-{%- if not loop.last %}
+{% if not loop.last %}
 \divider{{ "{" }}{{ "}" }}
-{%- endif %}
+{% endif %}
 
 {%- endfor %}
