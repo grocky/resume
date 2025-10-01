@@ -14,6 +14,11 @@ watch-serve: ## watch files and reload on changes
 
 build: $(OUTPUT_DIR)/$(BASE).pdf $(OUTPUT_DIR)/$(BASE)_Compressed.pdf ## Compile the PDF
 
+cover: $(OUTPUT_DIR)/Rocky_Gray_Cover.pdf ## Compile the cover letter
+
+$(OUTPUT_DIR)/Rocky_Gray_Cover.pdf: Rocky_Gray_Cover.tex 
+	TEXINPUTS=./classes//: latexmk -lualatex -output-directory=$(OUTPUT_DIR) -f $(notdir $^) || true
+
 $(OUTPUT_DIR)/$(BASE)_Compressed.pdf: $(OUTPUT_DIR)/$(BASE).pdf
 	UNIDOC_LICENSE_API_KEY=$$(find_password UNIDOC_LICENSE_API_KEY) go run compression/main.go $< $@
 
