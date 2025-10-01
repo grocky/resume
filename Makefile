@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 
 SOURCE ?= Rocky_Gray_Resume.tex
-BASE = "$(basename $(SOURCE))"
+BASE = $(basename $(SOURCE))
 OUTPUT_DIR = docs
 
 LATEXMK_OPTS=-pdf -output-directory=$(OUTPUT_DIR)
@@ -12,10 +12,13 @@ serve: ## serve page locally
 watch-serve: ## watch files and reload on changes
 	ls docs/* | entr reload-browser "Google Chrome"
 
-build: $(OUTPUT_DIR)/$(BASE).pdf ## Compile the PDF
+build: $(OUTPUT_DIR)/$(BASE).pdf $(OUTPUT_DIR)/$(BASE)_Compressed.pdf ## Compile the PDF
+
+$(OUTPUT_DIR)/$(BASE)_Compressed.pdf: $(OUTPUT_DIR)/$(BASE).pdf
+	UNIDOC_LICENSE_API_KEY=$$(find_password UNIDOC_LICENSE_API_KEY) go run compression/main.go $< $@
 
 $(OUTPUT_DIR)/%.pdf: $(SOURCE)
-	latexmk $(LATEXMK_OPTS) $^
+	latexmk $(LATEXMK_OPTS) -f $^ || true
 
 .PHONY: watch
 watch: $(SOURCE) ## compile and reload
